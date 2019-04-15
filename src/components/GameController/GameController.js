@@ -9,7 +9,7 @@ export default class GameController extends Component {
     return (
         <div style={{height:"10vh", width:"100vw", display:"table-cell", position:"relative"}}>
         <SkoreKeeper computer score={this.props.computerWins} games={this.props.gamesPlayed}/>
-        <img src={ImageOfCards[54]} alt="" style={{ width:"53%", verticalAlign:"middle"}} />
+        <img src={ImageOfCards[54]} alt="" style={{ width:"53%", verticalAlign:"middle", cursor: "pointer"}} />
         <DealEm text={this.props.dealEm} />
         <SkoreKeeper score={this.props.theirWins} games={this.props.gamesPlayed}/>
         </div>
