@@ -17,8 +17,8 @@ constructor(props) {
     theirCards:[52,52,52,52,52],
     step: 0,
     dealEm: "Deal'em",
-    gamesPlayed: 100,
-    computerWins: 200,
+    gamesPlayed: 0,
+    computerWins: 0,
     theirWins: 0,
      
   }
