@@ -35,7 +35,7 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer>
+          <footer style={{color:"#D4AF37"}}>
             © G.H.T. {new Date().getFullYear()}
           </footer>
         </div>

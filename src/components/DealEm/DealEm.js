@@ -3,6 +3,14 @@ import styled from 'styled-components'
 
 export default class DealEm extends Component {
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       message: ["Deal'em", "Draw "]
+    }
+  }
+  
 
 
   render(...props) {
@@ -23,7 +31,7 @@ export default class DealEm extends Component {
 
     return (
       <div>
-        <StyledDealEm >{this.props.text}</StyledDealEm>
+        <StyledDealEm >{this.state.message[this.props.step]}</StyledDealEm>
       </div>
     )
   }

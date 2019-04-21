@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix:'/assignment/proj3/public',
   siteMetadata: {
     title: `Five Card Draw`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Final project for ITDEV-164-600. Simple 5 card draw game that is played against the users device.`,
+    author: `Grant Thompson`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `five-card-draw`,
+        short_name: `♠ Five Card Draw ♠`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#6f580a`,
+        theme_color: `#6f580a`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/components/imageofcards/images/sa.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

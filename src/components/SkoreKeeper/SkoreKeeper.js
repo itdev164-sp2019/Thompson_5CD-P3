@@ -21,12 +21,13 @@ export default class SkoreKeeper extends Component {
         position:absolute;
         font-size:1.5em;
         font-weight:bold;
+        color: #D4AF37;
         ${(...props) => this.props.computer ? `
-        top:-10px;
-        right:-10px;
+        top:-20px;
+        right:-5px;
         `:`
-        bottom:-10px;
-        left:-10px;
+        bottom:-17px;
+        left:-5px;
         `}
         `
 
@@ -35,7 +36,7 @@ export default class SkoreKeeper extends Component {
 
     return (
       <div>
-        <StyledText >{`${this.props.score}/${this.props.games}`}</StyledText>
+        <StyledText >{`${this.props.text} ${this.props.score}/${this.props.games}`}</StyledText>
       </div>
     )
   }

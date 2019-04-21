@@ -1,16 +1,17 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "five-card-draw",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A simple five card draw game",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Grant Thompson <adin.tocc@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.3.16",
+    "gatsby": "^2.3.24",
     "gatsby-image": "^2.0.37",
     "gatsby-plugin-manifest": "^2.0.28",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.29",
     "gatsby-transformer-sharp": "^2.1.17",
     "prop-types": "^15.7.2",
@@ -25,13 +26,14 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "MIT",
+  "license": "Copyright 2019 G.H.T",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "postbuild": "rimraf build/**/*.map",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {
