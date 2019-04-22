@@ -3,8 +3,8 @@ import RowOfCards from "../RowOfCards"
 import GameController from "../GameController"
 import Game from '../../Helpers/Game'
 
-import firebase from 'firebase'
-import {DB_Config} from '../../Helpers/FBConfig'
+//import firebase from 'firebase'
+//import {DB_Config} from '../../Helpers/FBConfig'
 
 
 
@@ -127,8 +127,11 @@ var arrayHolder = {
     //computer discard
     Game.checkComputerCards(arrayHolder.b, arrayHolder.d)
 
+    //reset computer view cards to backsides
+    let computerTempCards = [52,52,52,52,52]
 
-
+    //show computer discarded cards
+    Game.showComputerDicardedCards( arrayHolder.d ,computerTempCards)
 
 
     
@@ -139,7 +142,7 @@ var arrayHolder = {
       playerCards: [...arrayHolder.c],
       playerTempCards:  [...arrayHolder.c],
       computerDraw: [...arrayHolder.d],
-      computerTempCards: [52,52,52,52,52],
+      computerTempCards,
       winnerString0: "",
       winnerString1: "",
       step: 1

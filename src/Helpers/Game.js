@@ -521,18 +521,18 @@ export default class Game {
                 console.log(`${j} =j`)
                 return j;
             }
-            else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 0 && arrTemp[12] === 1) {
-                console.log(`straight --3`)
-                return j - 3;
-            }
-            else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 0 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-                console.log(`straight --3`)
-                return j - 2;
-            }
-            else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 0 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-                console.log(`straight --3`)
-                return j - 1;
-            }
+            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 0 && arrTemp[12] === 1) {
+            //     console.log(`straight --3`)
+            //     return j - 3;
+            // }
+            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 0 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
+            //     console.log(`straight --3`)
+            //     return j - 2;
+            // }
+            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 0 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
+            //     console.log(`straight --3`)
+            //     return j - 1;
+            // }
             else if (j === 3 && arrTemp[j] === 0 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
                 console.log(`straight --3`)
                 return j;
@@ -694,6 +694,18 @@ export default class Game {
         return evaluateTheArray
     }
 
-    
+    static showComputerDicardedCards = (arg1, arg2) => {
+
+
+        for(let i = 0; i < arg1.length; i++){
+
+            if(arg1[i]){
+                arg2[i] = 53
+            }
+
+        }
+
+
+    }
   
 }
