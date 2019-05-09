@@ -99,33 +99,13 @@ var arrayHolder = {
   if(this.state.step === 0){
 
     
-    var randomComputerCard = -1
-    var randomPlayerCard = -1
+   
 
-
-    for (let i = 0; i < this.state.computerCards.length; i++){
-
-
-      do {
-        this.randomComputerCard = Math.floor(Math.random( ) * 52)
-      } while (this.checkCardsForDuplicate(this.randomComputerCard, arrayHolder) );
-      
-        arrayHolder.b[i] = this.randomComputerCard
-
-      do {
-        this.randomPlayerCard = Math.floor(Math.random( ) * 52)
-      } while (this.checkCardsForDuplicate(this.randomPlayerCard, arrayHolder));
-      
-      arrayHolder.c[i] = this.randomPlayerCard
-
-    }
-
-
-
-    
+    //Deal out initail cards
+    Game.dealOutInitialCards(arrayHolder.b, arrayHolder.c, arrayHolder) 
 
     //computer discard
-    Game.checkComputerCards(arrayHolder.b, arrayHolder.d)
+    Game.checkComputerCards(arrayHolder.b, arrayHolder.d, arrayHolder)
 
     //reset computer view cards to backsides
     let computerTempCards = [52,52,52,52,52]
@@ -190,8 +170,8 @@ var arrayHolder = {
 
     //let computerTempCards = this.state.computerCards
 
-    console.log(`${this.state.computerDraw} comp`)
-    console.log(`${this.state.playerDraw} player`)
+    //console.log(`${this.state.computerDraw} comp`)
+    //console.log(`${this.state.playerDraw} player`)
 
 
     this.setState({

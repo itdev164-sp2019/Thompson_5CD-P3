@@ -28,7 +28,7 @@ export default class Game {
                 }
             }
 
-            console.log(`play suits`)
+            //console.log(`play suits`)
             return;
 
         }
@@ -58,7 +58,7 @@ export default class Game {
 
             }
 
-            console.log(`droidThrowOneCard`)
+            //console.log(`droidThrowOneCard`)
             return;
         }
 
@@ -66,7 +66,7 @@ export default class Game {
         let droidFullHouse = this.checkForFullHouses(scoreForComputer);
 
         if (droidFullHouse > 13){
-            console.log(`${droidSelectedCard} fullhouse`)
+            //console.log(`${droidSelectedCard} fullhouse`)
             return;
         }
 
@@ -74,7 +74,7 @@ export default class Game {
         let straightForDroid0 = this.checkForStraight(scoreForComputer)
 
         if (straightForDroid0 > 0) {
-            console.log(`${droidSelectedCard} straight0`)
+            //console.log(`${droidSelectedCard} straight0`)
             return;
         }
 
@@ -97,7 +97,7 @@ export default class Game {
                 }
             }
 
-            console.log(`${droidSelectedCard} straight1`)
+            //console.log(`${droidSelectedCard} straight1`)
             return;
         }
 
@@ -132,7 +132,7 @@ export default class Game {
                 }
 
             }
-            console.log(`droid 3 of a kind`)
+            //console.log(`droid 3 of a kind`)
             return;
         }
 
@@ -155,7 +155,7 @@ export default class Game {
 
             }
 
-            console.log(`droidCheckForTwoOfA_Kind`)
+            //console.log(`droidCheckForTwoOfA_Kind`)
             return;
 
         }
@@ -184,7 +184,7 @@ export default class Game {
                 }
             }
 
-            console.log(`Play on 2 of a kinds`)
+            //console.log(`Play on 2 of a kinds`)
             return;
         }
 
@@ -197,7 +197,7 @@ export default class Game {
  
 
 
-                console.log(`${playerDice[j]%13} === ${checkforPossibleStraight}`)
+                //console.log(`${playerDice[j]%13} === ${checkforPossibleStraight}`)
 
                  if(playerDice[j]%13 > checkforPossibleStraight || playerDice[j]%13 < checkforPossibleStraight - 4){
                      droidSelectedCard[j] = true;
@@ -205,7 +205,7 @@ export default class Game {
  
              }
  
-             console.log(`possible straight ${droidSelectedCard}`)
+             //console.log(`possible straight ${droidSelectedCard}`)
              return;
  
          }
@@ -228,7 +228,7 @@ export default class Game {
             }
         }
 
-        console.log(`play 2 biggest cards`)
+        //console.log(`play 2 biggest cards`)
 
     }
 
@@ -514,11 +514,11 @@ export default class Game {
 
         for (let j = 12; j >= 3; j--) {
             if (j > 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[(j - 4)] === 0) {
-                console.log(`${j + 4} =j....`)
+                //console.log(`${j + 4} =j....`)
                 return j + 4;
             }
             else if (j > 3 && arrTemp[j] === 0 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[(j - 4)] === 1) {
-                console.log(`${j} =j`)
+                //console.log(`${j} =j`)
                 return j;
             }
             // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 0 && arrTemp[12] === 1) {
@@ -534,7 +534,7 @@ export default class Game {
             //     return j - 1;
             // }
             else if (j === 3 && arrTemp[j] === 0 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-                console.log(`straight --3`)
+                //console.log(`straight --3`)
                 return j;
             }
             
@@ -707,5 +707,37 @@ export default class Game {
 
 
     }
+
+    static dealOutInitialCards = (arg1, arg2, arg3) => {
+        for (let i = 0; i < arg1.length; i++){
+
+
+            do {
+              this.randomComputerCard = Math.floor(Math.random( ) * 52)
+            } while (this.checkCardsForDuplicate(this.randomComputerCard, arg3) );
+            
+            arg1[i] = this.randomComputerCard
+      
+            do {
+              this.randomPlayerCard = Math.floor(Math.random( ) * 52)
+            } while (this.checkCardsForDuplicate(this.randomPlayerCard, arg3));
+            
+            arg2[i] = this.randomPlayerCard
+      
+          }
+    }
+
+    static checkCardsForDuplicate = (arg1, arg2) => {
+
+        for(let i = 0; i < arg2.a.length; i++){
+          if(arg2.a[i] === arg1){
+            return true
+          }
+        }
+      
+      
+        arg2.a = [...arg2.a, arg1]
+        return false
+      }
   
 }
