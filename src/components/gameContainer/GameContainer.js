@@ -3,9 +3,6 @@ import RowOfCards from "../RowOfCards"
 import GameController from "../GameController"
 import Game from '../../Helpers/Game'
 
-//import firebase from 'firebase'
-//import {DB_Config} from '../../Helpers/FBConfig'
-
 
 
 export default class GameContainer extends Component {
@@ -133,8 +130,6 @@ var arrayHolder = {
   }else if(this.state.step === 1){
 
 
-    //console.log(this.state.computerCards)
-
     arrayHolder = {
       a:this.state.usedCards,
       b:this.state.computerCards,
@@ -167,11 +162,6 @@ var arrayHolder = {
       }
 
     }
-
-    //let computerTempCards = this.state.computerCards
-
-    //console.log(`${this.state.computerDraw} comp`)
-    //console.log(`${this.state.playerDraw} player`)
 
 
     this.setState({

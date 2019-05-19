@@ -11,9 +11,6 @@ export default class SkoreKeeper extends Component {
     this.inputRef = React.createRef();
   }
 
-
-
-
   render(...props) {
 
 
@@ -30,9 +27,6 @@ export default class SkoreKeeper extends Component {
         left:-5px;
         `}
         `
-
-    
-
 
     return (
       <div>

@@ -27,8 +27,6 @@ export default class Game {
                     droidSelectedCard[i] = true;
                 }
             }
-
-            //console.log(`play suits`)
             return;
 
         }
@@ -57,8 +55,6 @@ export default class Game {
                 }
 
             }
-
-            //console.log(`droidThrowOneCard`)
             return;
         }
 
@@ -66,7 +62,6 @@ export default class Game {
         let droidFullHouse = this.checkForFullHouses(scoreForComputer);
 
         if (droidFullHouse > 13){
-            //console.log(`${droidSelectedCard} fullhouse`)
             return;
         }
 
@@ -74,7 +69,6 @@ export default class Game {
         let straightForDroid0 = this.checkForStraight(scoreForComputer)
 
         if (straightForDroid0 > 0) {
-            //console.log(`${droidSelectedCard} straight0`)
             return;
         }
 
@@ -97,7 +91,6 @@ export default class Game {
                 }
             }
 
-            //console.log(`${droidSelectedCard} straight1`)
             return;
         }
 
@@ -111,7 +104,7 @@ export default class Game {
 
 
 
-            for(let i = 0; i < scoreForComputer.length-4; i++){
+            for(let i = 0; i < scoreForComputer.length; i++){
                 if(scoreForComputer[i] === 1){
 
                     if(holder === -1) {
@@ -132,7 +125,6 @@ export default class Game {
                 }
 
             }
-            //console.log(`droid 3 of a kind`)
             return;
         }
 
@@ -183,8 +175,6 @@ export default class Game {
                     holdBig++;
                 }
             }
-
-            //console.log(`Play on 2 of a kinds`)
             return;
         }
 
@@ -194,18 +184,12 @@ export default class Game {
          if(checkforPossibleStraight > 0){
  
              for(let j = 0; j < 5; j++) {
- 
-
-
-                //console.log(`${playerDice[j]%13} === ${checkforPossibleStraight}`)
 
                  if(playerDice[j]%13 > checkforPossibleStraight || playerDice[j]%13 < checkforPossibleStraight - 4){
                      droidSelectedCard[j] = true;
                  }
  
              }
- 
-             //console.log(`possible straight ${droidSelectedCard}`)
              return;
  
          }
@@ -227,9 +211,6 @@ export default class Game {
                 holdBig++;
             }
         }
-
-        //console.log(`play 2 biggest cards`)
-
     }
 
     static whoWonRound = (arr0, arr1) =>
@@ -247,9 +228,6 @@ export default class Game {
         let suitsPlayer0 = this.checkForFlush(suitArray0)
         let suitsPlayer1 = this.checkForFlush(suitArray1)
 
-        //console.log(`player0:${suitArray0} ${suitsPlayer0}
-        //player1:${suitArray1} ${suitsPlayer1}`)
-
         for (let h = 13; h > 0; h--) {
             scoreForPlayer0[(h-1)] = this.checkScore(arr0, (h));
             scoreForPlayer1[(h-1)] = this.checkScore(arr1, (h));
@@ -257,8 +235,6 @@ export default class Game {
 
         let straightPlayer0 = this.checkForStraight(scoreForPlayer0);
         let straightPlayer1 = this.checkForStraight(scoreForPlayer1);
-
-        //console.log(`straightPlayer0=${straightPlayer0} straightPlayer1=${straightPlayer1}`)
 
 
         //check for royal flush
@@ -286,8 +262,6 @@ export default class Game {
         let player0MaxofA_Kind = this.checkMaxofAKind(scoreForPlayer0);
         let player1MaxofA_Kind = this.checkMaxofAKind(scoreForPlayer1);
 
-        //console.log(`player0MaxofA_Kind=${player0MaxofA_Kind} player1MaxofA_Kind=${player1MaxofA_Kind}`)
-
         if (player0MaxofA_Kind > player1MaxofA_Kind && player0MaxofA_Kind >= 400) {
 
 
@@ -305,8 +279,6 @@ export default class Game {
         //Check for full houses
         let player0FullHouse = this.checkForFullHouses(scoreForPlayer0);
         let player1FullHouse = this.checkForFullHouses(scoreForPlayer1);
-
-        //console.log(`player0FullHouse=${player0FullHouse} player1FullHouse=${player1FullHouse}`)
 
         if (player0FullHouse > 13 || player1FullHouse > 13) {
 
@@ -368,8 +340,6 @@ export default class Game {
 
         let two0fAkind0 = this.checkFor2OfAKinds(scoreForPlayer0);
         let two0fAkind1 = this.checkFor2OfAKinds(scoreForPlayer1);
-
-        //console.log(`two0fAkind0=${two0fAkind0} two0fAkind1=${two0fAkind1}`)
 
         if (two0fAkind0 > two0fAkind1) {
 
@@ -514,27 +484,12 @@ export default class Game {
 
         for (let j = 12; j >= 3; j--) {
             if (j > 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[(j - 4)] === 0) {
-                //console.log(`${j + 4} =j....`)
                 return j + 4;
             }
             else if (j > 3 && arrTemp[j] === 0 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[(j - 4)] === 1) {
-                //console.log(`${j} =j`)
                 return j;
             }
-            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 0 && arrTemp[12] === 1) {
-            //     console.log(`straight --3`)
-            //     return j - 3;
-            // }
-            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 0 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-            //     console.log(`straight --3`)
-            //     return j - 2;
-            // }
-            // else if (j === 3 && arrTemp[j] === 1 && arrTemp[(j - 1)] === 0 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-            //     console.log(`straight --3`)
-            //     return j - 1;
-            // }
             else if (j === 3 && arrTemp[j] === 0 && arrTemp[(j - 1)] === 1 && arrTemp[(j - 2)] === 1 && arrTemp[(j - 3)] === 1 && arrTemp[12] === 1) {
-                //console.log(`straight --3`)
                 return j;
             }
             

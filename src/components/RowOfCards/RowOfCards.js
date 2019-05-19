@@ -12,11 +12,6 @@ export default class RowOfCards extends Component {
         margin-top:10px;
         margin-bottom:10px;
         `
-
-
-      
-
-
     return (
       
       <StyledDiv >
