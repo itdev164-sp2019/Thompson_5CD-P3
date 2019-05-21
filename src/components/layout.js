@@ -9,10 +9,16 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
+import {ThemeProvider} from 'styled-components'
+import {Green as theme} from '../themes/Green'
+
+import {Footer} from '../components/Footer'
+
 import Header from "./header"
 import "./layout.css"
 
 const Layout = ({ children }) => (
+  <ThemeProvider theme={theme}>
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -35,13 +41,14 @@ const Layout = ({ children }) => (
           }}
         >
           <main>{children}</main>
-          <footer style={{color:"#D4AF37"}}>
+          <Footer >
             © {new Date().getFullYear()} G.H.T.
-          </footer>
+          </Footer>
         </div>
       </>
     )}
   />
+  </ThemeProvider>
 )
 
 Layout.propTypes = {
