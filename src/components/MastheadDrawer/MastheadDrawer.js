@@ -8,11 +8,11 @@ const Outer = styled(Flex)`
 position: fixed;
 top: ${props => props.top};
 height: ${props => props.height};
-width: 100%;
+width: 70%;
 transition: ${({theme}) => theme.transitions.medium};
 transform: ${props => (props.open ? 'translateY(0)' : 'translateY(-100%)')};
 z-index: ${props => (props.open ? 9998 : -1)};
-justify-content: center;
+justify-content: left;
 ${props => props.theme.variants.mastheadDrawer[props.variant || 'primary']};
 background-color: #6f580a;
 
