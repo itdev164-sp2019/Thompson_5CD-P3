@@ -1,4 +1,8 @@
+
+const breakpoints = [576, 768, 900]
+
 const theme = {
+    breakpoints: [...breakpoints],
     space:[0,4,8,16,32,64,128,256,512],
     lineHeights:{
         solid: 1,
@@ -34,6 +38,16 @@ const theme = {
             disabled: 'hsl(208,13%,75%',
             hint: 'hsl(208,13%,75%)'
         }
+    },
+    media: {
+        desktop: breakpoints[2],
+        tablet: breakpoints[1],
+        phone: breakpoints[0]
+    },
+    transitions:{
+        short: 'all 0.3s ease-out',
+        medium: 'all 0.6s ease-out',
+        long: 'all 0.9s ease-out'
     }
 }
 
@@ -52,6 +66,14 @@ const variants = {
         primary:{
             ...defaults.link,
             color: theme.colors.primary.main
+        }
+    },
+    mastheadDrawer:{
+        primary:{
+            backGround: '#6f580a'
+        },
+        contrast:{
+            background: '#6f580a'
         }
     }
 }
