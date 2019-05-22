@@ -1,8 +1,10 @@
+import React from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
+import {IconButton} from "../components/Button"
+import {DotsVerticalRounded as Dots} from 'styled-icons/boxicons-regular'
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, onClick1}) => (
   <header
     style={{
       background: `#D4AF37`,
@@ -12,6 +14,8 @@ const Header = ({ siteTitle }) => (
   >
     <div
       style={{
+        display: `flex`,
+        justifyContent: `space-between`,
         margin: `0 auto`,
         maxWidth: 960,
         padding: `0.75rem 1.0875rem`,
@@ -28,6 +32,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      <IconButton icon={<Dots />} onClick={() => onClick1()}></IconButton>
     </div>
   </header>
 )

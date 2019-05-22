@@ -75,6 +75,14 @@ const variants = {
         contrast:{
             background: '#6f580a'
         }
+    },
+    iconButton:{
+        primary:{
+            color: theme.colors.primary.main
+        },
+        contrast:{
+            color: theme.colors.primary.contrastText
+        }
     }
 }
 

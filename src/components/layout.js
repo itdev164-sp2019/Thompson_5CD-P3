@@ -32,9 +32,25 @@ const links = [
 ]
 export default class Layout extends React.Component{
 
-  state = {
-    drawerOpen: false,
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      drawerOpen: false,
+    }
+    
 
+  }
+
+
+  showDrawer = () => {
+
+    let drawerOpen = !this.state.drawerOpen
+
+
+    this.setState({
+      drawerOpen
+    })
   }
 
 
@@ -55,7 +71,7 @@ export default class Layout extends React.Component{
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle={data.site.siteMetadata.title} onClick1={() => this.showDrawer()}/>
         <div
           style={{
             margin: `0 auto`,
