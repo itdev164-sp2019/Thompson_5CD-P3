@@ -70,7 +70,7 @@ export default class Layout extends React.Component{
       }
     `}
     render={data => (
-      <>
+      <div style={{position:"relative", height:"100%"}}>
         <Header siteTitle={data.site.siteMetadata.title} onClick1={() => this.showDrawer()}/>
         <div
           style={{
@@ -80,7 +80,7 @@ export default class Layout extends React.Component{
             paddingTop: 0,
           }}
         >
-          <main>
+          <main style={{paddingBottom:"60px"}}>
             <MastheadDrawer
               height="56px"
               width="900px"
@@ -99,7 +99,7 @@ export default class Layout extends React.Component{
             © {new Date().getFullYear()} G.H.T.
           </Footer>
         </div>
-      </>
+      </div>
     )}
   />
   </ThemeProvider>

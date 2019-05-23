@@ -9,6 +9,7 @@ export default class RowOfCards extends Component {
         display: flex;
         align-items:center;
         justify-content:center;
+        margin-left:-10px;
         margin-top:10px;
         margin-bottom:10px;
         `
