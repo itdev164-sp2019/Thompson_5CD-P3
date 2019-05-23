@@ -21,14 +21,14 @@ import {Drawer as MastheadDrawer} from '../components/MastheadDrawer'
 
 const links = [
   {variant: 'contrast',
-  to: 'test-one',
-  text: 'Test1'},
+  to: '#',
+  text: 'Link1'},
   {variant: 'contrast',
-  to: 'test-two',
-  text: 'Test2'},
+  to: '#',
+  text: 'Link2'},
   {variant: 'contrast',
-  to: 'test-three',
-  text: 'Test3'}
+  to: '#',
+  text: 'Link3'}
 ]
 export default class Layout extends React.Component{
 
