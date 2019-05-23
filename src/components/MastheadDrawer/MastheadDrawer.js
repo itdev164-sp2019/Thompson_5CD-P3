@@ -11,7 +11,7 @@ height: ${props => props.height};
 max-width: 90%;
 transition: ${({theme}) => theme.transitions.medium};
 z-index: ${props => (props.open ? 9998 : 1)};
-transform: ${props => (props.open ? 'translateY(0)' : 'translateY(-190%)')};
+transform: ${props => (props.open ? 'translateY(0)' : 'translateY(-193%)')};
 justify-content: left;
 ${props => props.theme.variants.mastheadDrawer[props.variant || 'primary']};
 background-color: #6f580a;
